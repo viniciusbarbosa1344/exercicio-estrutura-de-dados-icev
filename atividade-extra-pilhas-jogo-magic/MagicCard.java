@@ -2,9 +2,9 @@ public class MagicCard {
     private String nome;
     private int custo;
     private String efeito;
-    private TipoCarta tipo;
+    private String tipo;
 
-    public MagicCard(String nome, int custo, String efeito, TipoCarta tipo) {
+    public MagicCard(String nome, int custo, String efeito, String tipo) {
         this.nome = nome;
         this.custo = custo;
         this.efeito = efeito;
@@ -32,10 +32,10 @@ public class MagicCard {
         this.efeito = efeito;
     }
 
-    public TipoCarta getTipo() {
+    public String getTipo() {
         return tipo;
     }
-    public void setTipo(TipoCarta tipo) {
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 

@@ -1,20 +1,20 @@
 import java.util.ArrayList;
 
-public class PilhaMagiasHabilidades<T> {
-    private ArrayList<T> pilha = new ArrayList<T>();
+public class Pilha {
+    private ArrayList<Integer> pilha = new ArrayList<Integer>();
 
-    public void push(T MagiaHbilidade){
-        pilha.add(MagiaHbilidade);
+    public void push(int informacao){
+        pilha.add(informacao);
     }        
 
-    public T pop() {
+    public int pop() {
         if (pilha.isEmpty()) {
             throw new RuntimeException("PILHA VAZIA ...");
         }
         return pilha.remove(pilha.size()-1);
     }
 
-    public T top() {
+    public int top() {
         if (pilha.isEmpty()) {
             throw new RuntimeException("PILHA VAZIA ...");
         }
@@ -32,12 +32,12 @@ public class PilhaMagiasHabilidades<T> {
         pilha.clear();
     }
 
-    public int size(){
+    public int tamanho(){
         return pilha.size();
     }
 
-    public void removeAt(T carta) {
-        pilha.remove(carta);
+    public int pegarPosicao(int posicao) {
+        return pilha.get(posicao);
     }
-    
+
 }

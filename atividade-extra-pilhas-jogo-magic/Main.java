@@ -1,42 +1,77 @@
 import java.util.Scanner;
 
-import javax.print.DocFlavor.STRING;
-
 public class Main {
     public static void main(String[] args) {
-        PilhaMagiasHabilidades pilha = new PilhaMagiasHabilidades();
+        PilhaMagiasHabilidades<MagicCard> pilha = new PilhaMagiasHabilidades<MagicCard>();
         Scanner input = new Scanner(System.in);
 
-        // Testando o metodo push (FUNCIONA !!)
-        MagicCard carta01 = new MagicCard("Bola de Fogo", 20, "Lança uma bola de fogo nos inimigos", TipoCarta.FEITIÇO);
-        pilha.push(carta01);
+        System.out.println("BEM-VINDO AO MAGIC: THE GATHERING");
+        System.out.println("1 - Criar Carta ");
+        System.out.println("2 - Excluir carta");
+        System.out.println("3 - Mostrar cartas");
+        System.out.println("4 - Excluir carta especifica");
+        System.out.println("5 - SAIR");
+        System.out.println("DIGITE A OPÇÃO QUE DESEJA:");
+        int opcao = input.nextInt();
 
-        MagicCard carta02 = new MagicCard("Lança de Gelo", 30, "Joga uma lança de gelo nos inimigos", TipoCarta.INSTANTÂNEA);
-        pilha.push(carta02);
+        while (opcao != 0){
+            if (opcao == 1){
+                System.out.println("Quantas cartas deseja cadastrar ?");
+                int qtdCartas = input.nextInt();
 
-        MagicCard carta03 = new MagicCard("Provocar", 5, "Inimigos provocados so atacam a carta que usou a habilidade", TipoCarta.HABILIDADE_ATIVADA);
-        pilha.push(carta03);
+                criarCartas(qtdCartas);
 
-        MagicCard carta04 = new MagicCard("Chamado do Sol", 40, "Buffa o ataque e defesa dos aliados por 3 turnos", TipoCarta.ENCANTAMENTO);
-        pilha.push(carta04);
+            }else if (opcao == 2){
+                pilha.pop();
+                System.out.println("CARTA EXCLUIDA ...");
 
-        MagicCard carta05 = new MagicCard("Steath Necklace", 10, "Diminue a chance de ser percebido por inimigos", TipoCarta.ARTEFATO);
-        pilha.push(carta05);
+            }else if (opcao == 3){
+                printPilha(pilha);
 
-        // Testando o metodo de remover na posição e o de exibir as cartas (FUNCIONA !!)
-        pilha.removeAt(carta02);
+            }else if (opcao == 4){
+                System.out.println("DIGITE A CARTA QUE DESEJA EXCLUIR:");
+                
+                
+            }else if (opcao == 5){
+                System.out.println("OBRIGADO POR UTILIZAR MEU PROGRAMA !!!");
+                break;
+            }
 
-        //Testando o metodo de remover uma carta usando pop()
-        pilha.pop();
-        
-        // Testando o metodo de exibir cartas (se desejar ver a lista completa, basta pegar o 'while' e colocar antes dos pilha.removeAt)
+
+        }
+
+        input.close();
+    }
+
+    public static void criarCartas(int qtdCartas) {
+        Scanner input = new Scanner(System.in);
+        for (int i = 0; i<qtdCartas; i++){
+            System.out.println("DIGITE O NOME DA CARTA:");
+            String nome = input.nextLine();
+
+            System.out.println("DIGITE O CUSTO DA CARTA:");
+            int custo = input.nextInt();
+
+            System.out.println("DIGITE O DESCRICAO DA CARTA:");
+            String descricao = input.nextLine();
+
+            System.out.println("DIGITE O TIPO DA CARTA:");
+            String tipo = input.nextLine();
+
+
+        }
+        System.out.println("VOCÊ CRIOU SUAS CARTAS");
+        input.close();
+    }
+
+    public static void printPilha(PilhaMagiasHabilidades<MagicCard> pilha) {
         while(!pilha.isEmpty()) {
             System.out.println(pilha.pop());
         }
-        
-        // Tentando aplicar os enums de tipo de carta
-        
-        // o terreno, criatura, encantamento, artefato, planeswalker ou feitiço
+    }
+
+    public static void removerEspecificoPilha(MagicCard carta, PilhaMagiasHabilidades<MagicCard> pilha) {
+        pilha.removeAt(carta);
     }
 
     
