@@ -2,10 +2,10 @@ import java.util.Scanner;
 
 public class GestaoHospitalar {
     Scanner input = new Scanner(System.in);
-    Fila<String> pNormal = new Fila<String>();
-    Fila<String> pLeve = new Fila<String>();
-    Fila<String> pModerado = new Fila<String>();
-    Fila<String> pSevero = new Fila<String>();
+    Fila<String> pacienteNormal = new Fila<String>();
+    Fila<String> pacienteLeve = new Fila<String>();
+    Fila<String> pacienteModerado = new Fila<String>();
+    Fila<String> pacienteSevero = new Fila<String>();
     Fila<String> filaPrincipalPrioridade = new Fila<String>();
 
     public void adicionarPaciente() {
@@ -18,16 +18,16 @@ public class GestaoHospitalar {
         int estadoPaciente = input.nextInt();
 
         if (estadoPaciente == 0) {
-            pNormal.enqueue(nome);
+            pacienteNormal.enqueue(nome);
 
         } else if (estadoPaciente == 1) {
-            pLeve.enqueue(nome);
+            pacienteLeve.enqueue(nome);
 
         } else if (estadoPaciente == 2) {
-            pModerado.enqueue(nome);
+            pacienteModerado.enqueue(nome);
                 
         } else if (estadoPaciente == 3) {
-            pSevero.enqueue(nome);
+            pacienteSevero.enqueue(nome);
         }
         
     }
@@ -39,16 +39,16 @@ public class GestaoHospitalar {
         int escolhaRemocao = input.nextInt();
 
         if (escolhaRemocao == 0) {
-            pNormal.dequeue();
+            pacienteNormal.dequeue();
 
         } else if (escolhaRemocao == 1) {
-            pLeve.dequeue();
+            pacienteLeve.dequeue();
 
         } else if (escolhaRemocao == 2) {
-            pModerado.dequeue();
+            pacienteModerado.dequeue();
                 
         } else if (escolhaRemocao == 3) {
-            pSevero.dequeue();
+            pacienteSevero.dequeue();
             
         }
     }
@@ -62,29 +62,29 @@ public class GestaoHospitalar {
         if (filaSelecionada == 0) {
             System.out.println(" ");
             System.out.println("<<<< FILA PACIENTES NORMAL >>>>");
-            for (int i = 0; i < pNormal.size(); i++) {
-                System.out.println(pNormal.pegarPosicao(i));
+            for (int i = 0; i < pacienteNormal.size(); i++) {
+                System.out.println(pacienteNormal.pegarPosicao(i));
             }
 
         } else if (filaSelecionada == 1) {
             System.out.println(" ");
             System.out.println("<<<< FILA PACIENTES LEVE >>>>");
-            for (int i = 0; i < pLeve.size(); i++) {
-                System.out.println(pLeve.pegarPosicao(i));
+            for (int i = 0; i < pacienteLeve.size(); i++) {
+                System.out.println(pacienteLeve.pegarPosicao(i));
             }
 
         } else if (filaSelecionada == 2) {
             System.out.println(" ");
             System.out.println("<<<< FILA PACIENTES MODERADO >>>>");
-            for (int i = 0; i < pModerado.size(); i++) {
-                System.out.println(pModerado.pegarPosicao(i));
+            for (int i = 0; i < pacienteModerado.size(); i++) {
+                System.out.println(pacienteModerado.pegarPosicao(i));
             }
                 
         } else if (filaSelecionada == 3) {
             System.out.println(" ");
             System.out.println("<<<< FILA PACIENTES SEVERO >>>>");
-            for (int i = 0; i < pSevero.size(); i++) {
-                System.out.println(pSevero.pegarPosicao(i));
+            for (int i = 0; i < pacienteSevero.size(); i++) {
+                System.out.println(pacienteSevero.pegarPosicao(i));
             }
 
         }
