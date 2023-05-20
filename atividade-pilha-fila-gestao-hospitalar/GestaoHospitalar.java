@@ -13,21 +13,24 @@ public class GestaoHospitalar {
         System.out.println("DIGITE O NOME DO PACIENTE:");
         String nome = input.next();
 
+        System.out.println("DIGITE O CPF DO PACIENTE:");
+        String cpf = input.next();
+
         System.out.println("ESCOLHA O ESTADO DO PACIENTE");
         System.out.println("{0 - NORMAL | 1 - LEVE | 2 - MODERADO | 3 - SEVERO}");
         int estadoPaciente = input.nextInt();
 
         if (estadoPaciente == 0) {
-            pacienteNormal.enqueue(nome);
+            pacienteNormal.enqueue("Nome:" + nome + " // CPF:" + cpf);
 
         } else if (estadoPaciente == 1) {
-            pacienteLeve.enqueue(nome);
+            pacienteLeve.enqueue("Nome:" + nome + " // CPF:" + cpf);
 
         } else if (estadoPaciente == 2) {
-            pacienteModerado.enqueue(nome);
+            pacienteModerado.enqueue("Nome:" + nome + " // CPF:" + cpf);
                 
         } else if (estadoPaciente == 3) {
-            pacienteSevero.enqueue(nome);
+            pacienteSevero.enqueue("Nome:" + nome + " // CPF:" + cpf);
         }
         
     }
