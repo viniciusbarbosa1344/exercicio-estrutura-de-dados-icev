@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Main extends GestaoHospitalar{
-    static GestaoHospitalar gestao = new GestaoHospitalar();
+    static GestaoHospitalar gestao_hospitalar = new GestaoHospitalar();
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
@@ -11,15 +11,19 @@ public class Main extends GestaoHospitalar{
 
         while (true) {
             if (opcao == 1) {
-                gestao.adicionarPaciente();
+                gestao_hospitalar.adicionarPaciente();
 
             } else if (opcao == 2) {
-                gestao.printarFilas();
+                gestao_hospitalar.printarFilas();
 
             } else if (opcao == 3) {
-                gestao.removerPacienteFilaEspecifica();
+                gestao_hospitalar.removerPacienteFilaEspecifica();
 
             } else if (opcao == 4) {
+                
+                // Ainda em desenvolvimento (tentar postar até dia 23/05)
+
+            } else if (opcao == 5) {
                 System.out.println("OBRIGADO POR UTILIZAR MEU PROGRAMA !!!");
                 break;
             }

@@ -1,12 +1,14 @@
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class GestaoHospitalar {
     Scanner input = new Scanner(System.in);
-    Fila<String> pacienteNormal = new Fila<String>();
-    Fila<String> pacienteLeve = new Fila<String>();
-    Fila<String> pacienteModerado = new Fila<String>();
-    Fila<String> pacienteSevero = new Fila<String>();
-    Fila<String> filaPrincipalPrioridade = new Fila<String>();
+    Fila pacienteNormal = new Fila();
+    Fila pacienteLeve = new Fila();
+    Fila pacienteModerado = new Fila();
+    Fila pacienteSevero = new Fila();
+
+    Fila filaPrincipalPrioridade = new Fila();
 
     public void adicionarPaciente() {
 
@@ -55,7 +57,13 @@ public class GestaoHospitalar {
             
         }
     }
-
+    
+    public void chamarParaAtendimento() { 
+        
+        // Ainda em desenvolvimento (tentar postar até dia 23/05)
+        
+    }
+    
     public void printarFilas() {
 
         System.out.println("{0 - NORMAL | 1 - LEVE | 2 - MODERADO | 3 - SEVERO}");
@@ -94,17 +102,14 @@ public class GestaoHospitalar {
 
     }
 
-    public void chamarParaAtendimento() {
-        
-    }
-
     public static void menu() {
         System.out.println(" ");
         System.out.println("<BEM-VINDO AO NOSSO SISTEMA HOSPITALAR>");
         System.out.println("1 - Adicionar Paciente");
         System.out.println("2 - Mostrar Fila Desejada");
         System.out.println("3 - Remover Paciente");
-        System.out.println("4 - Sair");
+        System.out.println("4 - Chamar Paciente");
+        System.out.println("5 - Sair");
         System.out.println(">> SELECIONE A OPÇÃO DESEJADA:");
     }
 }
